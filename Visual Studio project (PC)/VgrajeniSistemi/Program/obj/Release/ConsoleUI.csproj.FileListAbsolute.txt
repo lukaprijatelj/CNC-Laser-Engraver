@@ -1,0 +1,32 @@
+E:\Projects\VgrajeniSistemi\Program\bin\Release\Program.exe.config
+E:\Projects\VgrajeniSistemi\Program\bin\Release\Program.exe
+E:\Projects\VgrajeniSistemi\Program\bin\Release\Program.pdb
+E:\Projects\VgrajeniSistemi\Program\bin\Release\PointSequence.dll
+E:\Projects\VgrajeniSistemi\Program\bin\Release\PointSequence.pdb
+E:\Projects\VgrajeniSistemi\Program\obj\Release\ConsoleUI.csprojResolveAssemblyReference.cache
+E:\Projects\VgrajeniSistemi\Program\obj\Release\Program.exe
+E:\Projects\VgrajeniSistemi\Program\obj\Release\Program.pdb
+C:\Users\Matjaž\Google Drive\Fri\Fri 2014_2015\S01\VS\VS Projekt\PC\VgrajeniSistemi\Program\bin\Release\Program.exe.config
+C:\Users\Matjaž\Google Drive\Fri\Fri 2014_2015\S01\VS\VS Projekt\PC\VgrajeniSistemi\Program\obj\Release\Program.exe
+C:\Users\Matjaž\Google Drive\Fri\Fri 2014_2015\S01\VS\VS Projekt\PC\VgrajeniSistemi\Program\obj\Release\Program.pdb
+C:\Users\Matjaž\Google Drive\Fri\Fri 2014_2015\S01\VS\VS Projekt\PC\VgrajeniSistemi\Program\bin\Release\Program.exe
+C:\Users\Matjaž\Google Drive\Fri\Fri 2014_2015\S01\VS\VS Projekt\PC\VgrajeniSistemi\Program\bin\Release\Program.pdb
+C:\Users\Matjaž\Google Drive\Fri\Fri 2014_2015\S01\VS\VS Projekt\PC\VgrajeniSistemi\Program\bin\Release\PointSequence.dll
+C:\Users\Matjaž\Google Drive\Fri\Fri 2014_2015\S01\VS\VS Projekt\PC\VgrajeniSistemi\Program\bin\Release\PointSequence.pdb
+C:\Users\Matjaž\Google Drive\Fri\Fri 2014_2015\S01\VS\VS Projekt\PC\VgrajeniSistemi\Program\obj\Release\ConsoleUI.csprojResolveAssemblyReference.cache
+F:\VgrajeniSistemi\Program\bin\Release\Program.exe.config
+F:\VgrajeniSistemi\Program\obj\Release\Program.exe
+F:\VgrajeniSistemi\Program\obj\Release\Program.pdb
+F:\VgrajeniSistemi\Program\bin\Release\Program.exe
+F:\VgrajeniSistemi\Program\bin\Release\Program.pdb
+F:\VgrajeniSistemi\Program\bin\Release\PointSequence.dll
+F:\VgrajeniSistemi\Program\bin\Release\PointSequence.pdb
+F:\VgrajeniSistemi\Program\obj\Release\ConsoleUI.csprojResolveAssemblyReference.cache
+C:\Users\luka\Desktop\Matjaž\VgrajeniSistemi\Program\bin\Release\Program.exe.config
+C:\Users\luka\Desktop\Matjaž\VgrajeniSistemi\Program\obj\Release\Program.exe
+C:\Users\luka\Desktop\Matjaž\VgrajeniSistemi\Program\obj\Release\Program.pdb
+C:\Users\luka\Desktop\Matjaž\VgrajeniSistemi\Program\bin\Release\Program.exe
+C:\Users\luka\Desktop\Matjaž\VgrajeniSistemi\Program\bin\Release\Program.pdb
+C:\Users\luka\Desktop\Matjaž\VgrajeniSistemi\Program\bin\Release\PointSequence.dll
+C:\Users\luka\Desktop\Matjaž\VgrajeniSistemi\Program\bin\Release\PointSequence.pdb
+C:\Users\luka\Desktop\Matjaž\VgrajeniSistemi\Program\obj\Release\ConsoleUI.csprojResolveAssemblyReference.cache

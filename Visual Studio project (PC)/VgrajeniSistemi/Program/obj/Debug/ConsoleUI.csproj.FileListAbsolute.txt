@@ -1,0 +1,34 @@
+E:\Projects\VgrajeniSistemi\Program\bin\Debug\Program.exe.config
+E:\Projects\VgrajeniSistemi\Program\bin\Debug\Program.exe
+E:\Projects\VgrajeniSistemi\Program\bin\Debug\Program.pdb
+E:\Projects\VgrajeniSistemi\Program\bin\Debug\PointSequence.dll
+E:\Projects\VgrajeniSistemi\Program\bin\Debug\PointSequence.pdb
+E:\Projects\VgrajeniSistemi\Program\obj\Debug\ConsoleUI.csprojResolveAssemblyReference.cache
+E:\Projects\VgrajeniSistemi\Program\obj\Debug\Program.exe
+E:\Projects\VgrajeniSistemi\Program\obj\Debug\Program.pdb
+C:\Users\Matjaž\Google Drive\Fri\Fri 2014_2015\S01\VS\VS Projekt\PC\VgrajeniSistemi\Program\bin\Debug\Program.exe.config
+C:\Users\Matjaž\Google Drive\Fri\Fri 2014_2015\S01\VS\VS Projekt\PC\VgrajeniSistemi\Program\obj\Debug\Program.exe
+C:\Users\Matjaž\Google Drive\Fri\Fri 2014_2015\S01\VS\VS Projekt\PC\VgrajeniSistemi\Program\obj\Debug\Program.pdb
+C:\Users\Matjaž\Google Drive\Fri\Fri 2014_2015\S01\VS\VS Projekt\PC\VgrajeniSistemi\Program\bin\Debug\Program.exe
+C:\Users\Matjaž\Google Drive\Fri\Fri 2014_2015\S01\VS\VS Projekt\PC\VgrajeniSistemi\Program\bin\Debug\Program.pdb
+C:\Users\Matjaž\Google Drive\Fri\Fri 2014_2015\S01\VS\VS Projekt\PC\VgrajeniSistemi\Program\bin\Debug\PointSequence.dll
+C:\Users\Matjaž\Google Drive\Fri\Fri 2014_2015\S01\VS\VS Projekt\PC\VgrajeniSistemi\Program\bin\Debug\PointSequence.pdb
+C:\Users\Matjaž\Google Drive\Fri\Fri 2014_2015\S01\VS\VS Projekt\PC\VgrajeniSistemi\Program\obj\Debug\ConsoleUI.csprojResolveAssemblyReference.cache
+F:\VgrajeniSistemi\Program\bin\Debug\Program.exe.config
+F:\VgrajeniSistemi\Program\obj\Debug\Program.exe
+F:\VgrajeniSistemi\Program\obj\Debug\Program.pdb
+F:\VgrajeniSistemi\Program\obj\Debug\ConsoleUI.csprojResolveAssemblyReference.cache
+F:\VgrajeniSistemi\Program\bin\Debug\Program.exe
+F:\VgrajeniSistemi\Program\bin\Debug\Program.pdb
+F:\VgrajeniSistemi\Program\bin\Debug\PointSequence.dll
+F:\VgrajeniSistemi\Program\bin\Debug\PointSequence.pdb
+C:\Users\luka\Desktop\Matjaž\VgrajeniSistemi\Program\bin\Debug\circle.png
+C:\Users\luka\Desktop\Matjaž\VgrajeniSistemi\Program\bin\Debug\cut.png
+C:\Users\luka\Desktop\Matjaž\VgrajeniSistemi\Program\bin\Debug\Program.exe.config
+C:\Users\luka\Desktop\Matjaž\VgrajeniSistemi\Program\bin\Debug\Program.exe
+C:\Users\luka\Desktop\Matjaž\VgrajeniSistemi\Program\bin\Debug\Program.pdb
+C:\Users\luka\Desktop\Matjaž\VgrajeniSistemi\Program\bin\Debug\PointSequence.dll
+C:\Users\luka\Desktop\Matjaž\VgrajeniSistemi\Program\bin\Debug\PointSequence.pdb
+C:\Users\luka\Desktop\Matjaž\VgrajeniSistemi\Program\obj\Debug\ConsoleUI.csprojResolveAssemblyReference.cache
+C:\Users\luka\Desktop\Matjaž\VgrajeniSistemi\Program\obj\Debug\Program.exe
+C:\Users\luka\Desktop\Matjaž\VgrajeniSistemi\Program\obj\Debug\Program.pdb

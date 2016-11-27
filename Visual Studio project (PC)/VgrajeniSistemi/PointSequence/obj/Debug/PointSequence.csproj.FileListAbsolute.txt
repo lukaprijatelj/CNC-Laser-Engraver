@@ -1,0 +1,14 @@
+E:\Projects\VgrajeniSistemi\PointSequence\bin\Debug\PointSequence.dll
+E:\Projects\VgrajeniSistemi\PointSequence\bin\Debug\PointSequence.pdb
+E:\Projects\VgrajeniSistemi\PointSequence\obj\Debug\PointSequence.dll
+E:\Projects\VgrajeniSistemi\PointSequence\obj\Debug\PointSequence.pdb
+E:\Projects\VgrajeniSistemi\PointSequence\obj\Debug\PointSequence.csprojResolveAssemblyReference.cache
+F:\VgrajeniSistemi\PointSequence\bin\Debug\PointSequence.dll
+F:\VgrajeniSistemi\PointSequence\bin\Debug\PointSequence.pdb
+F:\VgrajeniSistemi\PointSequence\obj\Debug\PointSequence.csprojResolveAssemblyReference.cache
+F:\VgrajeniSistemi\PointSequence\obj\Debug\PointSequence.dll
+F:\VgrajeniSistemi\PointSequence\obj\Debug\PointSequence.pdb
+C:\Users\luka\Desktop\Matjaž\VgrajeniSistemi\PointSequence\bin\Debug\PointSequence.dll
+C:\Users\luka\Desktop\Matjaž\VgrajeniSistemi\PointSequence\bin\Debug\PointSequence.pdb
+C:\Users\luka\Desktop\Matjaž\VgrajeniSistemi\PointSequence\obj\Debug\PointSequence.dll
+C:\Users\luka\Desktop\Matjaž\VgrajeniSistemi\PointSequence\obj\Debug\PointSequence.pdb

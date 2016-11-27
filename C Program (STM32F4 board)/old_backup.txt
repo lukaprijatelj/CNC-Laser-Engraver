@@ -1,0 +1,279 @@
+a//** MAIN **//
+
+#include "stm32f4_discovery.h"
+
+void initNVIC_USART(){
+  /*
+   * Nastavitve za prekinitve oz za prekiniitveni krmilnik NVIC (Nested vectored interrupt controller)
+   */
+  NVIC_InitTypeDef NVIC_InitStructure;
+  NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;
+  NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
+  NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
+  NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+  NVIC_Init(&NVIC_InitStructure);
+}
+
+void initNVIC_TIM4(){
+  /*
+   * Nastavitve za prekinitve oz za prekiniitveni krmilnik NVIC (Nested vectored interrupt controller)
+   */
+  NVIC_InitTypeDef NVIC_InitStructure;
+  NVIC_InitStructure.NVIC_IRQChannel = TIM4_IRQn;
+  NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
+  NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
+  NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+  NVIC_Init(&NVIC_InitStructure);
+}
+
+void initUSART(){
+  // Vkljuci driver za GPIOD
+  RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE);
+  RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);
+  
+  // nastavimo pine GPIO naprave
+  GPIO_InitTypeDef GPIO_InitStruct;
+  GPIO_InitStruct.GPIO_Pin = GPIO_Pin_6 | GPIO_Pin_7; 
+  GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF;
+  GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz; 
+  GPIO_InitStruct.GPIO_OType = GPIO_OType_PP; 
+  GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_UP;
+  GPIO_Init(GPIOB, &GPIO_InitStruct);
+  
+  // nastavimo alternativno funkcijo GPIO pina
+  GPIO_PinAFConfig(GPIOB, GPIO_PinSource6, GPIO_AF_USART1); 
+  GPIO_PinAFConfig(GPIOB, GPIO_PinSource7, GPIO_AF_USART1);
+
+  /*   
+   * nastavimo USART napravo
+  */
+  USART_InitTypeDef USART_InitStruct;
+  
+  //– nastavimo baudrate
+  USART_InitStruct.USART_BaudRate = 9600;
+  
+  //– nastavimo dolžino znaka
+  // možnosti: USART_WordLength_8b in USART_WordLength_9b
+  USART_InitStruct.USART_WordLength = USART_WordLength_8b;
+  
+  //– dolocimo št. stop bitov
+  // možnosti: USART_StopBits_1, USART_StopBits_0_5, USART_StopBits_1_5, USART_StopBits_2
+  USART_InitStruct.USART_StopBits = USART_StopBits_1;
+  
+  //– nastavimo tip paritete
+  // možnosti: USART_Parity_No, USART_Parity_Even, USART_Parity_Odd
+  USART_InitStruct.USART_Parity = USART_Parity_No;
+  
+  USART_InitStruct.USART_HardwareFlowControl=USART_HardwareFlowControl_None;
+    
+  // dolocimo nacin delovanja
+  USART_InitStruct.USART_Mode = USART_Mode_Tx | USART_Mode_Rx;
+  
+  // klicemo inicializacijo
+  USART_Init(USART1, &USART_InitStruct);
+  
+  // vklop naprave
+  USART_Cmd(USART1, ENABLE);
+  
+  // Prekinitve USART naprave
+  USART_ITConfig(USART1, USART_IT_TXE, ENABLE);
+
+}
+
+void sendData(uint16_t data){
+  while(!USART_GetFlagStatus(USART1, USART_FLAG_TXE));
+  USART_SendData(USART1, data);
+  while(!USART_GetFlagStatus(USART1, USART_FLAG_TC));
+}
+
+void initiTIM4(){
+  // TOREJ:  perioda = 84 / (84 * 10000) 
+
+  //vklopimo APB1 uro za TIM4
+  RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM4, ENABLE);
+  
+  TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;
+  
+  //osnovne nastavitve za stevec = ARR register
+  TIM_TimeBaseStructure.TIM_Period = 100; // TIM4_ARR
+  
+  //Nastavimo prescaler (vhodna frekvenca ure na TIM4 je 84 MHz = 8400)
+  TIM_TimeBaseStructure.TIM_Prescaler = 8400;   
+  
+  //doloca razmerje med uro casovnika in uro sempliranja -> nastavi na 0
+  TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV2;
+  
+  //nastavimo nacin štetja (druge možnosti sta TIM_CounterMode_Down in TIM_CounterMode_CenterAligned1
+  TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
+  
+  TIM_TimeBaseInit(TIM4, &TIM_TimeBaseStructure);
+  
+  
+  /* 
+   * Inicializacija za OUTPUT kanale 
+   */
+   TIM_OCInitTypeDef TIM_OCInitStructure;
+   
+  //nastavimo tip spremembe ob counter = CCR1 na kanalu se bo "izvajal" PWM
+  TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1;
+  
+  //vklopimo izhod na pin (sprememba se bo poznala na pinu vezanem na OC kanal) druga možnost je TIM_OutputState_Disable
+  TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;
+  
+  //pulz ima vrednost logicne enice
+  TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High; 
+  
+  //nastavimo dolžino pulza  = COMPARE register
+  TIM_OCInitStructure.TIM_Pulse = 100;  
+  
+  //klicemo init kanala 1 na TIM4 z napolnjeno strukturo
+  TIM_OC1Init(TIM4, &TIM_OCInitStructure);
+
+  /* Vklop prekinitev */
+  TIM_ITConfig(TIM4, TIM_IT_Update, ENABLE);
+  
+  //Vklop casovnika
+  //TIM_Cmd(TIM4,ENABLE);
+}
+
+int main(void)
+{     
+  RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);
+  RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE);
+  
+  GPIO_InitTypeDef inicializacijskaStruktura;
+  inicializacijskaStruktura.GPIO_Mode = GPIO_Mode_OUT;
+  inicializacijskaStruktura.GPIO_OType = GPIO_OType_PP;
+  inicializacijskaStruktura.GPIO_PuPd = GPIO_PuPd_NOPULL;
+  inicializacijskaStruktura.GPIO_Speed = GPIO_Speed_100MHz;
+  inicializacijskaStruktura.GPIO_Pin = GPIO_Pin_5 | GPIO_Pin_4 | GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_0;
+  GPIO_Init(GPIOC, &inicializacijskaStruktura);
+    
+   GPIO_InitTypeDef inicializacijskaStruktura3;
+  inicializacijskaStruktura3.GPIO_Mode = GPIO_Mode_OUT;
+  inicializacijskaStruktura3.GPIO_OType = GPIO_OType_PP;
+  inicializacijskaStruktura3.GPIO_PuPd = GPIO_PuPd_NOPULL;
+  inicializacijskaStruktura3.GPIO_Speed = GPIO_Speed_100MHz;
+  inicializacijskaStruktura3.GPIO_Pin = GPIO_Pin_14;
+  GPIO_Init(GPIOD, &inicializacijskaStruktura3);
+  
+  
+  
+  
+  // Nastavi Pin PC5 (smer motorja na levo stran- ce ga nastavis na 1, bo motor obracal na drugo stran)
+  GPIO_ResetBits(GPIOC,GPIO_Pin_5);
+  
+  // Ti trije M1, M2, M3 poskrbijo za to, da motor deluje z cetrino obrata
+  GPIO_ResetBits(GPIOC,GPIO_Pin_1); // Nastavi pin PC1 (M1 na 0)
+  GPIO_ResetBits(GPIOC,GPIO_Pin_0); // Nastavi pin PC0 (M3 na 0)
+  GPIO_SetBits(GPIOC,GPIO_Pin_2);  // Nastavi pin PC2 (M2 na 0)
+  
+  
+  
+  
+  // Inicializacija timerja
+  initNVIC_TIM4();
+  initNVIC_USART();
+  initiTIM4();  
+  initUSART();
+
+  // Zagon UART-a
+  sendData(0x61);
+  
+  while(1)
+  {
+    
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void delay(){
+  volatile int i=0;
+  for(i=0; i<8000000; i++);
+}
+
+
+
+
+void USART1_IRQHandler(void)
+{
+  if (USART_GetFlagStatus(USART1, USART_FLAG_RXNE))
+  {
+      // Branje prejetega znaka
+     uint8_t prejeti_biti = USART_ReceiveData(USART1);
+     
+     
+     // GPIOD pin 14 je samo zato, da lahko vidim ali deluje ploscica
+     
+     // Crka A predstavlja zacni z obracanjem koracnega motorja
+     if(prejeti_biti == 65){
+       GPIO_ResetBits(GPIOC,GPIO_Pin_4);
+       GPIO_ResetBits(GPIOD,GPIO_Pin_14);
+       TIM_Cmd(TIM4,ENABLE);
+     }
+     
+     // Crka B predstavlja ustavi vrtenje
+     if(prejeti_biti == 66){
+       TIM_Cmd(TIM4,DISABLE);
+       GPIO_ResetBits(GPIOC,GPIO_Pin_4);
+       GPIO_ResetBits(GPIOD,GPIO_Pin_14);
+     }
+     
+     // Crka C predstavlja Obrni smer vrtenja motorja v levo
+     if(prejeti_biti == 67){
+       GPIO_SetBits(GPIOC,GPIO_Pin_5);
+     }
+     
+     // Crka D predstavlja Obrni smer vrtenja motorja v desno
+      if(prejeti_biti == 68){
+       GPIO_ResetBits(GPIOC,GPIO_Pin_5);
+     }
+     
+  }
+}
+
+
+
+
+
+void TIM4_IRQHandler(void)
+{
+ 
+  //GPIO_ToggleBits(GPIOC,GPIO_Pin_4);
+  
+  //GPIO_ToggleBits(GPIOD,GPIO_Pin_14);
+  
+  //Preveri, ali je bila zastavica postavljena
+  if (TIM_GetITStatus(TIM4, TIM_IT_Update) != RESET)
+  {
+    GPIO_ToggleBits(GPIOD,GPIO_Pin_14);
+    GPIO_ToggleBits(GPIOC,GPIO_Pin_4);
+    
+    // Pobriši zastavico
+    TIM_ClearITPendingBit(TIM4, TIM_IT_Update);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
