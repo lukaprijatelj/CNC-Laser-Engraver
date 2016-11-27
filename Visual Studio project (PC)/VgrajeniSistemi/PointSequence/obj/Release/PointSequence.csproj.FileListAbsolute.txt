@@ -1,8 +1,0 @@
-E:\Projects\VgrajeniSistemi\PointSequence\bin\Release\PointSequence.dll
-E:\Projects\VgrajeniSistemi\PointSequence\bin\Release\PointSequence.pdb
-E:\Projects\VgrajeniSistemi\PointSequence\obj\Release\PointSequence.dll
-E:\Projects\VgrajeniSistemi\PointSequence\obj\Release\PointSequence.pdb
-F:\VgrajeniSistemi\PointSequence\bin\Release\PointSequence.dll
-F:\VgrajeniSistemi\PointSequence\bin\Release\PointSequence.pdb
-F:\VgrajeniSistemi\PointSequence\obj\Release\PointSequence.dll
-F:\VgrajeniSistemi\PointSequence\obj\Release\PointSequence.pdb
