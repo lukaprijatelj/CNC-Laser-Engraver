@@ -11,8 +11,8 @@ Before every actual development stage, there are few stages that need to be done
 
 
 ## Authors
-- [Luka Prijatelj] https://github.com/mrLukas
-- [Matjaž Mav] https://github.com/matjazmav
+- [Luka Prijatelj] (https://github.com/mrLukas)
+- [Matjaž Mav] (https://github.com/matjazmav)
 
 ## Future development
 I have also started to design real CNC with ability to cut and drill. I want to convert this laser CNC to mechanical CNC with spindle motor. This will probably happen in the far future because I don't have a lot of time - But it is on my to-do list.
