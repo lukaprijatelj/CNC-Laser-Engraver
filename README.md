@@ -16,6 +16,9 @@ For project we used:
 - 2 drivers for stepper motors 
 - additional fan for cooling of the drivers
 
+# Design sketch
+![alt tag](https://raw.githubusercontent.com/mrLukas/Laser-CNC/master/Pictures/Design.png)
+
 ## Images
 ![alt tag](https://raw.githubusercontent.com/mrLukas/Laser-CNC/master/Pictures/IMAG0582.jpg)
 ![alt tag](https://raw.githubusercontent.com/mrLukas/Laser-CNC/master/Pictures/IMAG0588.jpg)
