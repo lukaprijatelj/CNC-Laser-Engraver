@@ -19,7 +19,7 @@ For project we used:
 # Design sketch
 ![alt tag](https://raw.githubusercontent.com/mrLukas/Laser-CNC/master/Pictures/Design.png)
 
-## Images
+## Images of the final product
 ![alt tag](https://raw.githubusercontent.com/mrLukas/Laser-CNC/master/Pictures/IMAG0582.jpg)
 ![alt tag](https://raw.githubusercontent.com/mrLukas/Laser-CNC/master/Pictures/IMAG0588.jpg)
 
