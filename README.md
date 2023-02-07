@@ -24,7 +24,8 @@ For project we used:
 ![alt tag](https://raw.githubusercontent.com/mrLukas/Laser-CNC/master/Pictures/IMAG0588.jpg)
 
 ## Video
-![caption]([link to image / GIF](https://raw.githubusercontent.com/mrLukas/Laser-CNC/master/Pictures/Testing%20motors.mov))
+![caption]([link to image / GIF])
+[![Watch the video](https://raw.githubusercontent.com/mrLukas/Laser-CNC/master/Pictures/IMAG0581.jpg)](https://raw.githubusercontent.com/mrLukas/Laser-CNC/master/Pictures/Testing%20motors.mov)
 
 ## Authors
 - [Luka Prijatelj] (https://github.com/mrLukas)
