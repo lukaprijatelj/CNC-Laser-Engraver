@@ -23,7 +23,7 @@ For project we used:
 ![alt tag](https://raw.githubusercontent.com/mrLukas/Laser-CNC/master/Pictures/IMAG0582.jpg)
 ![alt tag](https://raw.githubusercontent.com/mrLukas/Laser-CNC/master/Pictures/IMAG0588.jpg)
 
-## Video
+## Video of testing stepper motors
 [![Watch the video](https://img.youtube.com/vi/07j5fcle0Pc/hqdefault.jpg)](https://youtu.be/07j5fcle0Pc)
 
 ## Authors
