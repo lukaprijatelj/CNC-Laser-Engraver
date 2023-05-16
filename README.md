@@ -25,6 +25,7 @@ For project we used:
 
 ## Video of testing stepper motors
 [![Watch the video](https://img.youtube.com/vi/07j5fcle0Pc/hqdefault.jpg)](https://youtu.be/07j5fcle0Pc)
+[![Watch the video](https://img.youtube.com/vi/gaNr3JMzZRA/hqdefault.jpg)](https://youtu.be/gaNr3JMzZRA)
 
 ## Authors
 - [Luka Prijatelj] (https://github.com/mrLukas)
